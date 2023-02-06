@@ -20,7 +20,7 @@ def home_endpoint():
     return 'Hello World!'
 
 
-@app.route('/predict',methods=['GET', 'POST'])
+@app.route('/predict',methods=['POST'])
 def get_prediction():
     # Works only for a single sample
     if request.method == 'POST':
