@@ -25,9 +25,10 @@ def get_prediction():
     # Works only for a single sample
     if request.method == 'POST':
         data = request.get_json()  # Get data posted as a json
-        data = np.array(data)[np.newaxis, :]  # converts shape from (4,) to (1, 4)
-        prediction = model.predict(data)  # runs globally loaded model on the data
-        return str(prediction[0])
+        return str(data)
+#         data = np.array(data)[np.newaxis, :]  # converts shape from (4,) to (1, 4)
+#         prediction = model.predict(data)  # runs globally loaded model on the data
+#         return str(prediction[0])
     else:
         return str("not post")
 
